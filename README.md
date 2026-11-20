@@ -70,7 +70,25 @@ check the plumbing.
 ## Settings and secrets
 
 Model settings live in `.env`, which is ignored by git. **Never commit `.env` or paste a key into code.** If a key ever
-reaches GitHub, treat it as leaked and make a new one.
+reaches GitHub or GitLab, treat it as leaked and make a new one.
+
+## GitLab CI/CD
+
+Continuous integration is configured in `.gitlab-ci.yml`. When pushed to GitLab, the pipeline automatically spins up Python 3.12, installs dependencies, and runs the complete test suite:
+
+```yaml
+stages:
+  - test
+
+run_tests:
+  stage: test
+  image: python:3.12-slim
+  before_script:
+    - python --version
+    - pip install --no-cache-dir -r requirements.txt
+  script:
+    - pytest -v
+```
 
 ## Stretch ideas
 
