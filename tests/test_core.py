@@ -4,10 +4,29 @@ They start skipped. Remove the `skip` line as you work on each milestone.
 """
 import pytest
 
+from app.core import milestone_1
+
+
 # Milestone 1: Define common event request types and create a small dataset of example requests.
-@pytest.mark.skip(reason="remove this line when you start milestone 1")
 def test_milestone_1():
-    raise NotImplementedError("write the test for milestone 1")
+    result = milestone_1()
+    assert result["status"] == "completed"
+    assert result["num_categories"] >= 5
+    assert result["total_examples"] >= 20
+    assert "venue_inquiry" in result["categories"]
+    assert "catering_request" in result["categories"]
+    assert "budget_estimate" in result["categories"]
+    assert "schedule_coordination" in result["categories"]
+    assert "entertainment_request" in result["categories"]
+
+    # Verify dataset is balanced
+    for cat in result["categories"]:
+        assert result["category_counts"][cat] >= 5
+
+    # Verify structure of each example
+    for example in result["dataset"]:
+        assert "text" in example and len(example["text"]) > 10
+        assert example["category"] in result["categories"]
 
 
 # Milestone 2: Configure GPT-2 with an extended tokenizer and model for custom tokens.
@@ -32,4 +51,3 @@ def test_milestone_4():
 @pytest.mark.skip(reason="remove this line when you start milestone 5")
 def test_milestone_5():
     raise NotImplementedError("write the test for milestone 5")
-

@@ -14,7 +14,7 @@ This project, 'Event Planning Request Sorter,' provides event planners with a sm
 
 Tick these off as you go, and commit after each one.
 
-- [ ] **1. Define common event request types and create a small dataset of example requests.**  
+- [x] **1. Define common event request types and create a small dataset of example requests.**  
       Hint: Identify distinct event request categories and create a balanced dataset with example phrases for each.
 - [ ] **2. Configure GPT-2 with an extended tokenizer and model for custom tokens.**  
       Hint: Extend the GPT-2 tokenizer with special tokens for your custom request types and reconfigure the model accordingly.
