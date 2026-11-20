@@ -20,7 +20,7 @@ Tick these off as you go, and commit after each one.
       Hint: Extend the GPT-2 tokenizer with special tokens for your custom request types and reconfigure the model accordingly.
 - [x] **3. Train the model on the example requests using the Hugging Face Trainer.**  
       Hint: Use the Hugging Face Trainer to fine-tune your GPT-2 model on the prepared dataset of event requests.
-- [ ] **4. Build an interface (CLI) to input new requests and show their classification.**  
+- [x] **4. Build an interface (CLI) to input new requests and show their classification.**  
       Hint: Implement an inference pipeline in your CLI to load the fine-tuned model and predict classifications for new user-entered requests.
 - [ ] **5. Allow saving classified requests to a file for review.**  
       Hint: Add functionality to write the original request and its predicted classification to a text file or CSV for record-keeping.
