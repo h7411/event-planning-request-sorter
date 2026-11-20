@@ -75,7 +75,7 @@ reaches GitHub or GitLab, treat it as leaked and make a new one.
 ## GitLab CI/CD
 
 Continuous integration is configured in `.gitlab-ci.yml`. When pushed to GitLab, the pipeline automatically spins up Python 3.12, installs dependencies, and runs the complete test suite:
-
+nc-17
 ```yaml
 stages:
   - test
